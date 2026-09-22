@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using WebAppStudents.DataAccessLayer;
 using WebAppStudents.Models;
@@ -38,6 +39,8 @@ namespace WebAppStudents.Controllers
                 return View("ErrorView", "student not found");
             }
 
+            FillAcademicGroups(model); // <-- подтягиваем группы из JSON
+
             return View(model);
         }
 
@@ -68,6 +71,7 @@ namespace WebAppStudents.Controllers
         public IActionResult StudentCreateView()
         {
             var model = new StudentViewModel();
+            FillAcademicGroups(model); // <-- подтягиваем группы из JSON
             return View(nameof(StudentEditView), model);
         }
 
@@ -129,6 +133,20 @@ namespace WebAppStudents.Controllers
             ViewData["counterStudents"] = _studentsList.Count;
 
             return View();
+        }
+
+        private void FillAcademicGroups(StudentViewModel model)
+        {
+            var groups = StorageHelper.LoadAcademicGroups(_environment) ?? new List<AcademicGroupViewModel>();
+
+            model.ListAcademicGroup = groups
+                .Select(g => new SelectListItem
+                {
+                    Text = g.Name,
+                    Value = g.Name,
+                    Selected = (g.Name == model.AcademicGroup) // автоматический выбор текущей группы
+                })
+                .ToList();
         }
     }
 }

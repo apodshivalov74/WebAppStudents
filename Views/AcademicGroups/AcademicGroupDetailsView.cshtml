@@ -1,0 +1,32 @@
+﻿@model WebAppStudents.Models.AcademicGroupViewModel
+
+@{
+    ViewData["Title"] = "Информация о группе";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Карточка академической группы</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-4">ID группы:</dt>
+                    <dd class="col-sm-8">@Model.AcademicGroupId</dd>
+
+                    <dt class="col-sm-4">Название:</dt>
+                    <dd class="col-sm-8 fw-bold">@Model.Name</dd>
+                </dl>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light">
+                <a asp-action="AcademicGroupsListView" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> К списку групп
+                </a>
+                <a asp-action="AcademicGroupEditView" asp-route-id="@Model.AcademicGroupId" class="btn btn-warning">
+                    <i class="bi bi-pencil"></i> Редактировать
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,13 @@
     "LastName": "Иванов",
     "FirstName": "Петр",
     "Age": 21,
-    "AcademicGroup": "ПИ-428"
+    "AcademicGroup": "ПИ-234"
+  },
+  {
+    "StudentViewModelId": 3,
+    "LastName": "Петров",
+    "FirstName": "Витя",
+    "Age": 19,
+    "AcademicGroup": "ПИ-234"
   }
 ]
