@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать</h1>
+    <div>
+        <!-- 1) вариант html helper -->
+        @Html.ActionLink("студенты-1", "Index", "Students");
+
+        <!-- 2) обычный html -->
+        <a href="Students/Index"> студенты-2 </a>
+
+        <!-- 3) custom tags -->
+        <a asp-controller="Students" asp-action="Index">
+            студенты-3
+        </a>
+    </div>
+</div>

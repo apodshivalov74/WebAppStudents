@@ -1,0 +1,29 @@
+﻿@{
+}
+
+<h5>Студенты, сейчас в списке = 
+    <span class="badge bg-secondary">
+    @ViewData["counterStudents"] 
+    </span>
+    чел.
+</h5>
+
+<div class="row">
+    <div class="col">
+        <a asp-action="StudentDetailsView">
+            Первый студент
+        </a>
+    </div>
+
+    <div class="col">
+        <a asp-action="StudentCreateView" class="btn btn-primary">
+            Добавить студента
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <a asp-action="StudentsListView" class="btn btn-outline-secondary">
+        посмотреть список студентов
+    </a>
+</div>

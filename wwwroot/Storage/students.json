@@ -1,0 +1,16 @@
+﻿[
+  {
+    "StudentViewModelId": 1,
+    "LastName": "Сидоров",
+    "FirstName": "Коля",
+    "Age": 20,
+    "AcademicGroup": "ПИ-136"
+  },
+  {
+    "StudentViewModelId": 2,
+    "LastName": "Иванов",
+    "FirstName": "Петр",
+    "Age": 21,
+    "AcademicGroup": "ПИ-428"
+  }
+]
